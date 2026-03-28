@@ -1,15 +1,9 @@
-// Configuration
+// api/config.js hoặc bất kỳ server-side file nào
 const CONFIG = {
-    // Telegram Configuration
-    TELEGRAM_BOT_TOKEN: '8365846811:AAHti0nM2QRBp3aJ0FUb0W0DWUb2f8Qt7zI',
-    TELEGRAM_CHAT_ID: '-4935916819',
-
-    // Notification Type: 'telegram', 'email', or 'both'
-    NOTIFICATION_TYPE: 'telegram',
-
-    // Security
-    SECRET_KEY: 'HDNDT-JDHT8FNEK-JJHR',
-    STORAGE_EXPIRY: 60 * 60 * 1000,
-    COUNTDOWN_TIME: 30
+  TELEGRAM_BOT_TOKEN: process.env.TELEGRAM_BOT_TOKEN,
+  TELEGRAM_CHAT_ID:   process.env.TELEGRAM_CHAT_ID,
+  NOTIFICATION_TYPE:  process.env.NOTIFICATION_TYPE || 'telegram',
+  SECRET_KEY:         process.env.SECRET_KEY,
+  STORAGE_EXPIRY:     60 * 60 * 1000,
+  COUNTDOWN_TIME:     parseInt(process.env.COUNTDOWN_TIME) || 30,
 };
-
